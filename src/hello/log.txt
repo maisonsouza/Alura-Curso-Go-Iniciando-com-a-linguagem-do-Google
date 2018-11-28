@@ -1,0 +1,12 @@
+28/11/2018 16:11:25 - https://random-status-code.herokuapp.com/ - online: true
+28/11/2018 16:11:26 - https://maisongalvao.com/ - online: true
+28/11/2018 16:11:29 - https://alura.com.br/ - online: true
+28/11/2018 16:14:51 - https://random-status-code.herokuapp.com/ - online: true
+28/11/2018 16:14:51 - https://maisongalvao.com/ - online: true
+28/11/2018 16:14:54 - https://alura.com.br/ - online: true
+28/11/2018 16:15:00 - https://random-status-code.herokuapp.com/ - online: true
+28/11/2018 16:15:00 - https://maisongalvao.com/ - online: true
+28/11/2018 16:15:01 - https://alura.com.br/ - online: true
+28/11/2018 16:15:06 - https://random-status-code.herokuapp.com/ - online: true
+28/11/2018 16:15:07 - https://maisongalvao.com/ - online: true
+28/11/2018 16:15:07 - https://alura.com.br/ - online: true
