@@ -3,6 +3,10 @@ package main
 import "fmt"
 import "os"
 import "net/http"
+import "time"
+
+const monitoramentos = 3
+const delay = 5
 
 func main() {
 
@@ -47,11 +51,23 @@ func leComando() {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-	site := "https://random-status-code.herokuapp.com/"
+	sites := []string{"https://random-status-code.herokuapp.com/", "https://maisongalvao.com/", "https://alura.com.br/"}
+	for i := 0; i < monitoramentos; i++ {
+		for _, site := range sites {
+			testaSite(site)
+		}
+		time.Sleep(delay * time.Second)
+        fmt.Println("")
+	}
+	fmt.Println("")
+
+}
+
+func testaSite(site string) {
 	resposta, _ := http.Get(site)
 	if resposta.StatusCode == 200 {
 		fmt.Println("O site ", site, "carregou com sucesso")
 	} else {
-		fmt.Println("Aconteceu um erro no site",resposta.StatusCode)
+		fmt.Println("Aconteceu o erro foi:", resposta.StatusCode, "no site", site)
 	}
 }
