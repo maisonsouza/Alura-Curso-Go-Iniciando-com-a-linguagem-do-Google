@@ -2,14 +2,18 @@ package main
 
 import "fmt"
 import "os"
+import "net/http"
 
 func main() {
 
-	exibeIntroducao()
-	exibeMenu()
-	leComando()
+	for {
+		exibeIntroducao()
+		exibeMenu()
+		leComando()
+	}
 
 }
+
 func exibeIntroducao() {
 	nome := "Maison"
 	versao := 1.1
@@ -21,7 +25,6 @@ func exibeMenu() {
 	fmt.Println("1 - Iniciar Monitoramento")
 	fmt.Println("2 - Exibir os logs")
 	fmt.Println("3 - Sair")
-
 }
 
 func leComando() {
@@ -30,7 +33,7 @@ func leComando() {
 	fmt.Println("O comando escolhido foi", comando)
 	switch comando {
 	case 1:
-		fmt.Println("Monitorando")
+		iniciarMonitoramento()
 	case 2:
 		fmt.Println("Mostrando Logs")
 	case 0:
@@ -40,5 +43,15 @@ func leComando() {
 		fmt.Println("opção inválida")
 		os.Exit(-1)
 	}
+}
 
+func iniciarMonitoramento() {
+	fmt.Println("Monitorando...")
+	site := "https://random-status-code.herokuapp.com/"
+	resposta, _ := http.Get(site)
+	if resposta.StatusCode == 200 {
+		fmt.Println("O site ", site, "carregou com sucesso")
+	} else {
+		fmt.Println("Aconteceu um erro no site",resposta.StatusCode)
+	}
 }
